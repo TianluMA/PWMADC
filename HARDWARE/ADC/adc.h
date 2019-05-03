@@ -16,10 +16,22 @@
 void Adc_Init(void);
 u16  Get_Adc(u8 ch); 
 u16 Get_Adc_Average(u8 ch,u8 times); 
-void Get_Adc_Window(u8 ch);
+void Get_Adc_Window0(u8 ch);
+void Get_Adc_Window1(u8 ch);
+void Get_Adc_Window2(u8 ch);
+void Get_Adc_Window3(u8 ch);
  
  
-extern int b[30];
-extern int c[31];
-extern u8 time;
+extern int b0[30];
+extern int b1[30];
+extern int b2[30];
+extern int b3[30];
+extern int c0[31];
+extern int c1[31];
+extern int c2[31];
+extern int c3[31];
+extern u8 time0;
+extern u8 time1;
+extern u8 time2;
+extern u8 time3;
 #endif 

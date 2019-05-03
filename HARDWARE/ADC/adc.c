@@ -83,26 +83,74 @@ u16 Get_Adc_Average(u8 ch,u8 times)
 } 	 
 
 
-void Get_Adc_Window(u8 ch)
+void Get_Adc_Window0(u8 ch)
 {
-	
 	 delay_ms(10);
-	 c[time]=Get_Adc(ch);
-	 time++;
-	 if(time>=32)
+	 c0[time0]=Get_Adc(ch);
+	 time0++;
+	 if(time0>=32)
 	 {
 		 
 		 u8 i=0;
 		 for(i=0;i<=30;i++)
 		 {
-			 c[i]=c[i+1];
-			 b[i]=c[i];
+			 c0[i]=c0[i+1];
+			 b0[i]=c0[i];
 		 }
-	 	 time=31;
+	 	 time0=31;
 	 }
+} 	 
 
-
-	
+void Get_Adc_Window1(u8 ch)
+{
+	 delay_ms(10);
+	 c0[time1]=Get_Adc(ch);
+	 time1++;
+	 if(time1>=32)
+	 {
+		 
+		 u8 i=0;
+		 for(i=0;i<=30;i++)
+		 {
+			 c1[i]=c1[i+1];
+			 b1[i]=c1[i];
+		 }
+	 	 time1=31;
+	 }
+} 	 
+void Get_Adc_Window2(u8 ch)
+{
+	 delay_ms(10);
+	 c2[time2]=Get_Adc(ch);
+	 time2++;
+	 if(time2>=32)
+	 {
+		 
+		 u8 i=0;
+		 for(i=0;i<=30;i++)
+		 {
+			 c2[i]=c2[i+1];
+			 b2[i]=c2[i];
+		 }
+	 	 time2=31;
+	 }
+} 	 
+void Get_Adc_Window3(u8 ch)
+{
+	 delay_ms(10);
+	 c3[time3]=Get_Adc(ch);
+	 time3++;
+	 if(time3>=32)
+	 {
+		 
+		 u8 i=0;
+		 for(i=0;i<=30;i++)
+		 {
+			 c3[i]=c3[i+1];
+			 b3[i]=c3[i];
+		 }
+	 	 time3=31;
+	 }
 } 	 
 
 
