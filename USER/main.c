@@ -6,7 +6,7 @@
 #include "timer.h"
 #include "adc.h"
 #include "median_filter.h"
- 
+#include "nokia_5110.h" 
 /* 
 使用说明 	
 TIM1的CH1和CH1N 产生带有死区的PWM波
@@ -37,7 +37,8 @@ u8 time=0;
   TIM1_PWM_Init(1160,0);	 //不分频。PWM频率=72000000/1161=62Khz
 	TIM8_PWM_Init(1160,0);	 //不分频。PWM频率=72000000/1161=62Khz
 	Adc_Init();		  		//ADC初始化
-
+	LCD_init(); //?????    
+	LCD_clear(); 
    	while(1)
 	{								 
 
@@ -57,7 +58,7 @@ u8 time=0;
 		adcx3=Get_Adc_Average(ADC_Channel_3,10);
 
 //		delay_ms(200);	
-		
+		LCD_write_english_string(0,0,"frequence:");
 //		delay_ms(1000);	
 	}	 
  }
