@@ -83,6 +83,28 @@ u16 Get_Adc_Average(u8 ch,u8 times)
 } 	 
 
 
+void Get_Adc_Window(u8 ch)
+{
+	
+	 delay_ms(10);
+	 c[time]=Get_Adc(ch);
+	 time++;
+	 if(time>=32)
+	 {
+		 
+		 u8 i=0;
+		 for(i=0;i<=30;i++)
+		 {
+			 c[i]=c[i+1];
+			 b[i]=c[i];
+		 }
+	 	 time=31;
+	 }
+
+
+	
+} 	 
+
 
 
 

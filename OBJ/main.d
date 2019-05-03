@@ -36,3 +36,4 @@
 ..\obj\main.o: D:\Program Files\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\main.o: ..\HARDWARE\ADC\adc.h
+..\obj\main.o: ..\HARDWARE\Median_Filter\median_filter.h

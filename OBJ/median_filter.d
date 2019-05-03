@@ -1,0 +1,33 @@
+..\obj\median_filter.o: ..\HARDWARE\Median_Filter\median_filter.c
+..\obj\median_filter.o: ..\HARDWARE\Median_Filter\median_filter.h
+..\obj\median_filter.o: ..\SYSTEM\sys\sys.h
+..\obj\median_filter.o: ..\USER\stm32f10x.h
+..\obj\median_filter.o: ..\CORE\core_cm3.h
+..\obj\median_filter.o: D:\Program Files\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\median_filter.o: ..\USER\system_stm32f10x.h
+..\obj\median_filter.o: ..\USER\stm32f10x_conf.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
+..\obj\median_filter.o: ..\USER\stm32f10x.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_bkp.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_can.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_cec.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_crc.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_dac.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_dma.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_exti.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_flash.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_i2c.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_iwdg.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_pwr.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_rtc.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_sdio.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_spi.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_tim.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
+..\obj\median_filter.o: ..\STM32F10x_FWLib\inc\misc.h
+..\obj\median_filter.o: D:\Program Files\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
