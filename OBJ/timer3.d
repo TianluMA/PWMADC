@@ -32,3 +32,5 @@
 ..\obj\timer3.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\timer3.o: ..\HARDWARE\LED\led.h
 ..\obj\timer3.o: ..\HARDWARE\ADC\adc.h
+..\obj\timer3.o: ..\HARDWARE\Median_Filter\median_filter.h
+..\obj\timer3.o: D:\Program Files\MDK5\ARM\ARMCC\Bin\..\include\stdio.h

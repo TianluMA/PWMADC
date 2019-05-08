@@ -1,6 +1,7 @@
 #include "timer3.h"
 #include "led.h"
 #include "adc.h"
+#include "median_filter.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK战舰STM32开发板
@@ -54,11 +55,6 @@ void TIM3_IRQHandler(void)   //TIM3中断
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)  //检查TIM3更新中断发生与否
 		{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
-		
-//			a0 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_1);
-//			a1 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_2);
-//			a2 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_3);
-//			a3 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_4);
 			
 		Get_Adc_Window0(ADC_InjectedChannel_1);
 		Get_Adc_Window1(ADC_InjectedChannel_2);
@@ -68,13 +64,10 @@ void TIM3_IRQHandler(void)   //TIM3中断
 		a1= GetMedianNum(b1, 31);
 		a2= GetMedianNum(b2, 31);
 		a3= GetMedianNum(b3, 31);
-		temp0=(float)(a0*0.0033-4.85);
+		temp0=(float)a0*(3.3/4096);
 		temp1=(float)a1*(3.3/4096);
-			
-			
-			
-			
-			
+		temp2=(float)a2*(3.3/4096);
+		temp3=(float)a3*(3.3/4096);
 			
 			
 			

@@ -29,10 +29,10 @@ u16 I1=0;
 int b0[30]={0};int b1[30]={0};int b2[30]={0};int b3[30]={0};
 int c0[31],c1[31],c2[31],c3[31];
 u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
-    char str0[3]="0";
-		char str1[3]="0";
-		char str2[3]="0";
-		char str3[3]="0";
+    char str0[10]="0";   // 数组长度不能取太小否则显示部分乱码
+		char str1[10]="0";
+		char str2[10]="0";
+		char str3[10]="0";
  int main(void)
  {		
 	
@@ -68,10 +68,10 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 //		temp1=(float)a1*(3.3/4096);
 //		temp2=(float)a2*(3.3/4096);
 //		temp3=(float)a3*(3.3/4096);
-    sprintf(str0,"%.3f",temp0);
-		sprintf(str1,"%.3f",temp1);
-//		sprintf(str2,"%.3f",temp2);
-//		sprintf(str3,"%.3f",temp3);
+    sprintf(str0,"%.2f",temp0);
+		sprintf(str1,"%.2f",temp1);
+		sprintf(str2,"%.2f",temp2);
+		sprintf(str3,"%.2f",temp3);
 
 
 		
