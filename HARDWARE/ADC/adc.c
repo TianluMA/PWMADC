@@ -35,8 +35,8 @@ void  Adc_Init(void)
 	ADC_DeInit(ADC1);  //复位ADC1 
 
 	ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;	//ADC工作模式:ADC1和ADC2工作在独立模式
-	ADC_InitStructure.ADC_ScanConvMode = DISABLE;	//模数转换工作在单通道模式
-	ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;	//模数转换工作在单次转换模式
+	ADC_InitStructure.ADC_ScanConvMode = ENABLE;	//模数转换工作在单通道模式
+	ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;	//模数转换工作在单次转换模式
 	ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;	//转换由软件而不是外部触发启动
 	ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;	//ADC数据右对齐
 	ADC_InitStructure.ADC_NbrOfChannel = 1;	//顺序进行规则转换的ADC通道的数目
@@ -53,7 +53,26 @@ void  Adc_Init(void)
  
 	while(ADC_GetCalibrationStatus(ADC1));	 //等待校准结束
  
-//	ADC_SoftwareStartConvCmd(ADC1, ENABLE);		//使能指定的ADC1的软件转换启动功能
+
+	
+	
+
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_Vrefint, 1, ADC_SampleTime_55Cycles5);
+
+    ADC_AutoInjectedConvCmd(ADC1, ENABLE);
+//    ADC_ExternalTrigInjectedConvEdgeConfig(ADC3, ADC_ExternalTrigInjecConvEdge_None); 
+    ADC_InjectedSequencerLengthConfig(ADC1, 4);
+    ADC_InjectedChannelConfig(ADC1, ADC_Channel_0, 1,ADC_SampleTime_55Cycles5);
+    ADC_InjectedChannelConfig(ADC1, ADC_Channel_1, 2,ADC_SampleTime_55Cycles5);
+    ADC_InjectedChannelConfig(ADC1, ADC_Channel_2, 3,ADC_SampleTime_55Cycles5);
+    ADC_InjectedChannelConfig(ADC1, ADC_Channel_3, 4,ADC_SampleTime_55Cycles5);
+//    ADC_SetInjectedOffset(ADC1, ADC_InjectedChannel_1, 2000);//?????????,?????????
+//    ADC_SetInjectedOffset(ADC1, ADC_InjectedChannel_2, 2000);// Enable ADC3 
+    ADC_Cmd(ADC1, ENABLE);
+	ADC_SoftwareStartConvCmd(ADC1, ENABLE);		//使能指定的ADC1的软件转换启动功能
+	
+	
+	
 
 }				  
 //获得ADC值
@@ -85,8 +104,9 @@ u16 Get_Adc_Average(u8 ch,u8 times)
 
 void Get_Adc_Window0(u8 ch)
 {
-	 delay_ms(10);
-	 c0[time0]=Get_Adc(ch);
+//	 delay_ms(10);
+	
+	 c0[time0]=ADC_GetInjectedConversionValue(ADC1, ch);
 	 time0++;
 	 if(time0>=32)
 	 {
@@ -103,8 +123,8 @@ void Get_Adc_Window0(u8 ch)
 
 void Get_Adc_Window1(u8 ch)
 {
-	 delay_ms(10);
-	 c0[time1]=Get_Adc(ch);
+//	 delay_ms(10);
+	 c0[time1]=ADC_GetInjectedConversionValue(ADC1, ch);
 	 time1++;
 	 if(time1>=32)
 	 {
@@ -120,8 +140,8 @@ void Get_Adc_Window1(u8 ch)
 } 	 
 void Get_Adc_Window2(u8 ch)
 {
-	 delay_ms(10);
-	 c2[time2]=Get_Adc(ch);
+//	 delay_ms(10);
+	 c2[time2]=ADC_GetInjectedConversionValue(ADC1, ch);
 	 time2++;
 	 if(time2>=32)
 	 {
@@ -137,8 +157,8 @@ void Get_Adc_Window2(u8 ch)
 } 	 
 void Get_Adc_Window3(u8 ch)
 {
-	 delay_ms(10);
-	 c3[time3]=Get_Adc(ch);
+//	 delay_ms(10);
+	 c3[time3]=ADC_GetInjectedConversionValue(ADC1, ch);
 	 time3++;
 	 if(time3>=32)
 	 {

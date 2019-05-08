@@ -39,7 +39,7 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 	delay_init();	    	 //延时函数初始化	  
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 	 //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
  	LED_Init();			     //LED端口初始化
-//	TIM3_Int_Init(99,7199);//10Khz的计数频率，计数到100为10ms  
+	TIM3_Int_Init(199,7199);//10Khz的计数频率，计数到200为20ms  
   TIM1_PWM_Init(1160,0);	 //不分频。PWM频率=72000000/1161=62Khz
 	TIM8_PWM_Init(1160,0);	 //不分频。PWM频率=72000000/1161=62Khz
 	Adc_Init();		  		//ADC初始化
@@ -51,7 +51,7 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 		TIM_SetCompare1(TIM1,580);		   // 设置TIM1通道1占空比 = 580/1160
 		TIM_SetCompare2(TIM8,580);		   // 设置TIM8通道2占空比 = 580/1160
 
-		delay_ms(50);
+//		delay_ms(50);
 //		Get_Adc_Window0(ADC_Channel_0);
 //		Get_Adc_Window1(ADC_Channel_1);
 //		Get_Adc_Window2(ADC_Channel_2);

@@ -55,12 +55,15 @@ void TIM3_IRQHandler(void)   //TIM3中断
 		{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
 		
+//			a0 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_1);
+//			a1 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_2);
+//			a2 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_3);
+//			a3 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_4);
 			
-			
-		Get_Adc_Window0(ADC_Channel_0);
-		Get_Adc_Window1(ADC_Channel_1);
-		Get_Adc_Window2(ADC_Channel_2);
-		Get_Adc_Window3(ADC_Channel_3);
+		Get_Adc_Window0(ADC_InjectedChannel_1);
+		Get_Adc_Window1(ADC_InjectedChannel_2);
+		Get_Adc_Window2(ADC_InjectedChannel_3);
+		Get_Adc_Window3(ADC_InjectedChannel_4);
 		a0= GetMedianNum(b0, 31);
 		a1= GetMedianNum(b1, 31);
 		a2= GetMedianNum(b2, 31);
