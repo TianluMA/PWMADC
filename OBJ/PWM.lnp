@@ -8,6 +8,7 @@
 "..\obj\adc.o"
 "..\obj\median_filter.o"
 "..\obj\5110.o"
+"..\obj\timer3.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"

@@ -38,3 +38,4 @@
 ..\obj\main.o: ..\HARDWARE\ADC\adc.h
 ..\obj\main.o: ..\HARDWARE\Median_Filter\median_filter.h
 ..\obj\main.o: ..\HARDWARE\5110\nokia_5110.h
+..\obj\main.o: ..\HARDWARE\TIMER3\timer3.h

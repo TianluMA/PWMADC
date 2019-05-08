@@ -7,6 +7,7 @@
 #include "adc.h"
 #include "median_filter.h"
 #include "nokia_5110.h" 
+#include "timer3.h"
 /* 
 使用说明 	
 TIM1的CH1和CH1N 产生带有死区的PWM波
@@ -22,7 +23,8 @@ TIM8的CH2和CH2N 产生带有死区的PWM波
 
 // ADC1 Chanel0,1,2,3  -> PA0,1,2,3
 	u16 adcx0,adcx1,adcx2,adcx3;
-int a1,a2,a3,a0;
+	float temp0,temp1,temp2,temp3,temp;
+int a1,a2,a3,a0,a;
 u16 I1=0;
 int b0[30]={0};int b1[30]={0};int b2[30]={0};int b3[30]={0};
 int c0[31],c1[31],c2[31],c3[31];
@@ -33,10 +35,11 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 		char str3[3]="0";
  int main(void)
  {		
-	float temp0,temp1,temp2,temp3;
+	
 	delay_init();	    	 //延时函数初始化	  
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 	 //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
  	LED_Init();			     //LED端口初始化
+//	TIM3_Int_Init(99,7199);//10Khz的计数频率，计数到100为10ms  
   TIM1_PWM_Init(1160,0);	 //不分频。PWM频率=72000000/1161=62Khz
 	TIM8_PWM_Init(1160,0);	 //不分频。PWM频率=72000000/1161=62Khz
 	Adc_Init();		  		//ADC初始化
@@ -49,19 +52,20 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 		TIM_SetCompare2(TIM8,580);		   // 设置TIM8通道2占空比 = 580/1160
 
 		delay_ms(50);
-		Get_Adc_Window0(ADC_Channel_0);
-		Get_Adc_Window1(ADC_Channel_1);
-		Get_Adc_Window2(ADC_Channel_2);
-		Get_Adc_Window3(ADC_Channel_3);
-		a0= GetMedianNum(b0, 31);
-		a1= GetMedianNum(b1, 31);
-		a2= GetMedianNum(b2, 31);
-		a3= GetMedianNum(b3, 31);
+//		Get_Adc_Window0(ADC_Channel_0);
+//		Get_Adc_Window1(ADC_Channel_1);
+//		Get_Adc_Window2(ADC_Channel_2);
+//		Get_Adc_Window3(ADC_Channel_3);
+//		a0= GetMedianNum(b0, 31);
+//		a1= GetMedianNum(b1, 31);
+//		a2= GetMedianNum(b2, 31);
+//		a3= GetMedianNum(b3, 31);
+		
+//		a=Get_Adc_Average(ADC_Channel_0,30);
 
-//		adcx0=Get_Adc_Average(ADC_Channel_0,10);
-//		temp=(float)adcx0*(3.3/4096);
-    temp0=(float)a0*(3.3/4096);
-		temp1=(float)a1*(3.3/4096);
+//		temp=(float)(a*0.0033-4.85);
+//    temp0=(float)(a0*0.0033-4.85);
+//		temp1=(float)a1*(3.3/4096);
 //		temp2=(float)a2*(3.3/4096);
 //		temp3=(float)a3*(3.3/4096);
     sprintf(str0,"%.3f",temp0);
