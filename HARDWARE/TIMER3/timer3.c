@@ -56,16 +56,9 @@ void TIM3_IRQHandler(void)   //TIM3中断
 		{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
 			
-		Get_Adc_Window0(ADC_InjectedChannel_1);
-		Get_Adc_Window1(ADC_InjectedChannel_2);
-		Get_Adc_Window2(ADC_InjectedChannel_3);
-		Get_Adc_Window3(ADC_InjectedChannel_4);
-		a0= GetMedianNum(b0, 31);
-		a1= GetMedianNum(b1, 31);
-		a2= GetMedianNum(b2, 31);
-		a3= GetMedianNum(b3, 31);
-		temp0=(float)a0*(3.3/4096);
-		temp1=(float)a1*(3.3/4096);
+
+		temp0=(float)(a0*0.0033-4.8);
+		temp1=(float)(a1*0.0161-0.2668);
 		temp2=(float)a2*(3.3/4096);
 		temp3=(float)a3*(3.3/4096);
 			

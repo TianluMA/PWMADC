@@ -26,8 +26,8 @@ TIM8的CH2和CH2N 产生带有死区的PWM波
 	float temp0,temp1,temp2,temp3,temp;
 int a1,a2,a3,a0,a;
 u16 I1=0;
-int b0[30]={0};int b1[30]={0};int b2[30]={0};int b3[30]={0};
-int c0[31],c1[31],c2[31],c3[31];
+int b0[200]={0};int b1[200]={0};int b2[200]={0};int b3[200]={0};
+int c0[201],c1[201],c2[201],c3[201];
 u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
     char str0[10]="0";   // 数组长度不能取太小否则显示部分乱码
 		char str1[10]="0";
@@ -60,7 +60,7 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 //		a1= GetMedianNum(b1, 31);
 //		a2= GetMedianNum(b2, 31);
 //		a3= GetMedianNum(b3, 31);
-		
+//		temp0=temp0+1;
 //		a=Get_Adc_Average(ADC_Channel_0,30);
 
 //		temp=(float)(a*0.0033-4.85);
@@ -68,6 +68,15 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 //		temp1=(float)a1*(3.3/4096);
 //		temp2=(float)a2*(3.3/4096);
 //		temp3=(float)a3*(3.3/4096);
+		Get_Adc_Window0(ADC_InjectedChannel_1);
+		Get_Adc_Window1(ADC_InjectedChannel_2);
+		Get_Adc_Window2(ADC_InjectedChannel_3);
+		Get_Adc_Window3(ADC_InjectedChannel_4);
+		a0= GetMedianNum(b0, 201);
+		a1= GetMedianNum(b1, 201);
+		a2= GetMedianNum(b2, 201);
+		a3= GetMedianNum(b3, 201);
+		
     sprintf(str0,"%.2f",temp0);
 		sprintf(str1,"%.2f",temp1);
 		sprintf(str2,"%.2f",temp2);

@@ -20,16 +20,19 @@ void Get_Adc_Window0(u8 ch);
 void Get_Adc_Window1(u8 ch);
 void Get_Adc_Window2(u8 ch);
 void Get_Adc_Window3(u8 ch);
+
+#define Time 200
+#define Time1 201
  
  
-extern int b0[30];
-extern int b1[30];
-extern int b2[30];
-extern int b3[30];
-extern int c0[31];
-extern int c1[31];
-extern int c2[31];
-extern int c3[31];
+extern int b0[200];
+extern int b1[200];
+extern int b2[200];
+extern int b3[200];
+extern int c0[201];
+extern int c1[201];
+extern int c2[201];
+extern int c3[201];
 extern u8 time0;
 extern u8 time1;
 extern u8 time2;

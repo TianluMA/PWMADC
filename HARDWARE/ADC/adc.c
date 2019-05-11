@@ -107,65 +107,65 @@ void Get_Adc_Window0(u8 ch)
 {
 	 c0[time0]=ADC_GetInjectedConversionValue(ADC1, ch);  // 获取ADC注入通道值
 	 time0++;
-	 if(time0>=32)
+	 if(time0>=202)
 	 {
 		 
 		 u8 i=0;
-		 for(i=0;i<=30;i++)
+		 for(i=0;i<=200;i++)
 		 {
 			 c0[i]=c0[i+1];
 			 b0[i]=c0[i];
 		 }
-	 	 time0=31;
+	 	 time0=201;
 	 }
 } 	 
 
 void Get_Adc_Window1(u8 ch)
 {
-	 c0[time1]=ADC_GetInjectedConversionValue(ADC1, ch);
+	 c1[time1]=ADC_GetInjectedConversionValue(ADC1, ch);
 	 time1++;
-	 if(time1>=32)
+	 if(time1>=202)
 	 {
 		 
 		 u8 i=0;
-		 for(i=0;i<=30;i++)
+		 for(i=0;i<=200;i++)
 		 {
 			 c1[i]=c1[i+1];
 			 b1[i]=c1[i];
 		 }
-	 	 time1=31;
+	 	 time1=201;
 	 }
 } 	 
 void Get_Adc_Window2(u8 ch)
 {
 	 c2[time2]=ADC_GetInjectedConversionValue(ADC1, ch);
 	 time2++;
-	 if(time2>=32)
+	 if(time2>=202)
 	 {
 		 
 		 u8 i=0;
-		 for(i=0;i<=30;i++)
+		 for(i=0;i<=200;i++)
 		 {
 			 c2[i]=c2[i+1];
 			 b2[i]=c2[i];
 		 }
-	 	 time2=31;
+	 	 time2=201;
 	 }
 } 	 
 void Get_Adc_Window3(u8 ch)
 {
 	 c3[time3]=ADC_GetInjectedConversionValue(ADC1, ch);
 	 time3++;
-	 if(time3>=32)
+	 if(time3>=202)
 	 {
 		 
 		 u8 i=0;
-		 for(i=0;i<=30;i++)
+		 for(i=0;i<=200;i++)
 		 {
 			 c3[i]=c3[i+1];
 			 b3[i]=c3[i];
 		 }
-	 	 time3=31;
+	 	 time3=201;
 	 }
 } 	 
 
