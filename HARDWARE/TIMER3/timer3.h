@@ -16,6 +16,7 @@
 
 
 void TIM3_Int_Init(u16 arr,u16 psc);
+void TIM3_PWM_Init(u16 arr,u16 psc);
 
 extern	u16 adcx0,adcx1,adcx2,adcx3;
 extern	float temp0,temp1,temp2,temp3,temp;
