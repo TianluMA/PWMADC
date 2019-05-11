@@ -67,7 +67,7 @@ void  Adc_Init(void)
     ADC_InjectedChannelConfig(ADC1, ADC_Channel_2, 3,ADC_SampleTime_55Cycles5);
     ADC_InjectedChannelConfig(ADC1, ADC_Channel_3, 4,ADC_SampleTime_55Cycles5);
     ADC_Cmd(ADC1, ENABLE);
-	ADC_SoftwareStartConvCmd(ADC1, ENABLE);		//使能指定的ADC1的软件转换启动功能
+	  ADC_SoftwareStartConvCmd(ADC1, ENABLE);		//使能指定的ADC1的软件转换启动功能
 	
 	
 //			a0 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_1);
@@ -103,71 +103,113 @@ u16 Get_Adc_Average(u8 ch,u8 times)
 } 	 
 
 
-void Get_Adc_Window0(u8 ch)
-{
-	 c0[time0]=ADC_GetInjectedConversionValue(ADC1, ch);  // 获取ADC注入通道值
-	 time0++;
-	 if(time0>=202)
-	 {
-		 
-		 u8 i=0;
-		 for(i=0;i<=200;i++)
-		 {
-			 c0[i]=c0[i+1];
-			 b0[i]=c0[i];
-		 }
-	 	 time0=201;
-	 }
-} 	 
+//void Get_Adc_Window0(u8 ch)
+//{
+//	 c0[time0]=ADC_GetInjectedConversionValue(ADC1, ch);  // 获取ADC注入通道值
+//	 time0++;
+//	 if(time0>=202)
+//	 {
+//		 
+//		 u8 i=0;
+//		 for(i=0;i<=200;i++)
+//		 {
+//			 c0[i]=c0[i+1];
+//			 b0[i]=c0[i];
+//		 }
+//	 	 time0=201;
+//	 }
+//} 	 
 
-void Get_Adc_Window1(u8 ch)
-{
-	 c1[time1]=ADC_GetInjectedConversionValue(ADC1, ch);
-	 time1++;
-	 if(time1>=202)
+//void Get_Adc_Window1(u8 ch)
+//{
+//	 c1[time1]=ADC_GetInjectedConversionValue(ADC1, ch);
+//	 time1++;
+//	 if(time1>=202)
+//	 {
+//		 
+//		 u8 i=0;
+//		 for(i=0;i<=200;i++)
+//		 {
+//			 c1[i]=c1[i+1];
+//			 b1[i]=c1[i];
+//		 }
+//	 	 time1=201;
+//	 }
+//} 	 
+
+//void Get_Adc_Window2(u8 ch)
+//{
+//	 c2[time2]=ADC_GetInjectedConversionValue(ADC1, ch);
+//	 time2++;
+//	 if(time2>=202)
+//	 {
+//		 
+//		 u8 i=0;
+//		 for(i=0;i<=200;i++)
+//		 {
+//			 c2[i]=c2[i+1];
+//			 b2[i]=c2[i];
+//		 }
+//	 	 time2=201;
+//	 }
+//} 	 
+//void Get_Adc_Window3(u8 ch)
+//{
+//	 c3[time3]=ADC_GetInjectedConversionValue(ADC1, ch);
+//	 time3++;
+//	 if(time3>=202)
+//	 {
+//		 
+//		 u8 i=0;
+//		 for(i=0;i<=200;i++)
+//		 {
+//			 c3[i]=c3[i+1];
+//			 b3[i]=c3[i];
+//		 }
+//	 	 time3=201;
+//	 }
+//} 	 
+
+
+void Get_Adc_Window00(u8 ch)
+{  
+//	 time0=0;
+	u8 i=0;
+	for(i=0;i<=200;i++)
 	 {
-		 
-		 u8 i=0;
-		 for(i=0;i<=200;i++)
-		 {
-			 c1[i]=c1[i+1];
-			 b1[i]=c1[i];
-		 }
-	 	 time1=201;
-	 }
-} 	 
-void Get_Adc_Window2(u8 ch)
-{
-	 c2[time2]=ADC_GetInjectedConversionValue(ADC1, ch);
-	 time2++;
-	 if(time2>=202)
+	 b0[i]=ADC_GetInjectedConversionValue(ADC1, ch);
+
+	 }		 
+} 
+void Get_Adc_Window11(u8 ch)
+{  
+	u8 i=0;
+	for(i=0;i<=200;i++)
 	 {
-		 
-		 u8 i=0;
-		 for(i=0;i<=200;i++)
-		 {
-			 c2[i]=c2[i+1];
-			 b2[i]=c2[i];
-		 }
-	 	 time2=201;
-	 }
-} 	 
-void Get_Adc_Window3(u8 ch)
-{
-	 c3[time3]=ADC_GetInjectedConversionValue(ADC1, ch);
-	 time3++;
-	 if(time3>=202)
+	 b1[i]=ADC_GetInjectedConversionValue(ADC1, ch);
+
+	 }		 
+} 
+
+void Get_Adc_Window22(u8 ch)
+{  
+	u8 i=0;
+	for(i=0;i<=200;i++)
 	 {
-		 
-		 u8 i=0;
-		 for(i=0;i<=200;i++)
-		 {
-			 c3[i]=c3[i+1];
-			 b3[i]=c3[i];
-		 }
-	 	 time3=201;
-	 }
-} 	 
+	 b2[i]=ADC_GetInjectedConversionValue(ADC1, ch);
+
+	 }		 
+} 
+
+void Get_Adc_Window33(u8 ch)
+{  
+	u8 i=0;
+	for(i=0;i<=200;i++)
+	 {
+	 b3[i]=ADC_GetInjectedConversionValue(ADC1, ch);
+
+	 }		 
+} 
 
 
 

@@ -2,21 +2,21 @@
 #include "control.h"
 
 
-int pwm;
-
+int pwm=500;
+float Position_KP=1,Position_KI=0,Position_KD=0;     // KP=1， KI=0.001， KD=0.01
 void TIM3_IRQHandler(void)   //TIM3中断
 {
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)  //检查TIM3更新中断发生与否
 		{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
-//		pwm=pwm-Position_PID(speed,Target_speed);              //===位置PID控制器
-//		limit_pwm();                                       //===PWM限幅
 
 		temp0=(float)(a0*0.0033-4.8);
 		temp1=(float)(a1*0.0161-0.2668);
 		temp2=(float)a2*(3.3/4096);
 		temp3=(float)a3*(3.3/4096);
-			
+		pwm=pwm-Position_PID(temp1,Target_Uo);              //===位置PID控制器
+		limit_pwm();                                       //===PWM限幅
+//		
 			
 			
 			
@@ -39,7 +39,7 @@ pwm代表输出
 **************************************************************************/
 int Position_PID (int Encoder,int Target)
 { 	
-	 float Position_KP=1,Position_KI=0.001,Position_KD=0.01;     // KP=1， KI=0.001， KD=0.01
+	 
 	 static float Bias,Pwm,Integral_bias,Last_Bias;
 	 Bias=Encoder-Target;                                  //计算偏差
 	 Integral_bias+=Bias;	                                 //求出偏差的积分
@@ -52,7 +52,7 @@ int Position_PID (int Encoder,int Target)
 
 void limit_pwm(void)
 { 
-		int Amplitude_High=8999;    //===PWM满幅是899 限制在899
+		int Amplitude_High=800;    //===PWM满幅是899 限制在899
 	  int Amplitude_Low=100;     //===PWM低于200，电机停止转速
     if(pwm>=Amplitude_High) pwm=Amplitude_High;	
 		if(pwm<=Amplitude_Low)  pwm=Amplitude_Low;	

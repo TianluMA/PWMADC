@@ -26,11 +26,16 @@ Project File Date:  05/11/2019
 
 <h2>Output:</h2>
 Build target 'PWM'
-compiling timer3.c...
+compiling main.c...
+main.c(45): warning:  #223-D: function "TIM3_Int_Init" declared implicitly
+        TIM3_Int_Init(199,7199);//10Khz的计数频率，计数到200为20ms  
+main.c(46): warning:  #223-D: function "TIM4_PWM_Init" declared implicitly
+        TIM4_PWM_Init(899,0);    //不分频。PWM频率=72000000/900=80Khz
+main.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=19452 RO-data=512 RW-data=824 ZI-data=8248  
+Program Size: Code=19212 RO-data=512 RW-data=836 ZI-data=8252  
 FromELF: creating hex file...
-"..\OBJ\PWM.axf" - 0 Error(s), 0 Warning(s).
+"..\OBJ\PWM.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\matia\Desktop\研电赛\PWMADC\USER\RTE

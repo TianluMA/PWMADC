@@ -33,7 +33,7 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 		char str1[10]="0";
 		char str2[10]="0";
 		char str3[10]="0";
-float Target_Uo=30.0;
+float Target_Uo=66.0;
 u8 D=50;    // 通道1占空比
 extern int pwm;
  int main(void)
@@ -43,29 +43,30 @@ extern int pwm;
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 	 //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
  	LED_Init();			     //LED端口初始化
 	TIM3_Int_Init(199,7199);//10Khz的计数频率，计数到200为20ms  
-	TIM3_PWM_Init(899,0);	 //不分频。PWM频率=72000000/900=80Khz
+	TIM4_PWM_Init(899,0);	 //不分频。PWM频率=72000000/900=80Khz
   TIM1_PWM_Init(1160,0);	 //不分频。PWM频率=72000000/1161=62Khz
 	TIM8_PWM_Init(1160,0);	 //不分频。PWM频率=72000000/1161=62Khz
 	Adc_Init();		  		//ADC初始化
+
 	LCD_init(); //?????    
 	LCD_clear(); 
    	while(1)
 	{								 
-pwm=500;
+//pwm=500;
 		TIM_SetCompare1(TIM1,580);		   // 设置TIM1通道1占空比 = 580/1160
 		TIM_SetCompare2(TIM8,580);		   // 设置TIM8通道2占空比 = 580/1160
 // ADC实时采集数据并排序
-		Get_Adc_Window0(ADC_InjectedChannel_1);
-		Get_Adc_Window1(ADC_InjectedChannel_2);
-		Get_Adc_Window2(ADC_InjectedChannel_3);
-		Get_Adc_Window3(ADC_InjectedChannel_4);
+		Get_Adc_Window00(ADC_InjectedChannel_1);
+		Get_Adc_Window11(ADC_InjectedChannel_2);
+		Get_Adc_Window22(ADC_InjectedChannel_3);
+		Get_Adc_Window33(ADC_InjectedChannel_4);
 		a0= GetMedianNum(b0, 201);
 		a1= GetMedianNum(b1, 201);
 		a2= GetMedianNum(b2, 201);
 		a3= GetMedianNum(b3, 201);
 // Boost PWM		
-		TIM_SetCompare1(TIM3,pwm);		   
-		TIM_SetCompare4(TIM3,pwm-50);	
+		TIM_SetCompare1(TIM4,pwm);		   
+		TIM_SetCompare2(TIM4,pwm-50);	
 // 显示器处理		
     sprintf(str0,"%.2f",temp0);
 		sprintf(str1,"%.2f",temp1);

@@ -21,6 +21,11 @@ void Get_Adc_Window1(u8 ch);
 void Get_Adc_Window2(u8 ch);
 void Get_Adc_Window3(u8 ch);
 
+void Get_Adc_Window00(u8 ch);
+void Get_Adc_Window11(u8 ch);
+void Get_Adc_Window22(u8 ch);
+void Get_Adc_Window33(u8 ch);
+
 #define Time 200
 #define Time1 201
  
