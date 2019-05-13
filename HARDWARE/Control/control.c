@@ -14,7 +14,7 @@ void TIM3_IRQHandler(void)   //TIM3中断
 		temp1=(float)(a1*0.0161-0.2668);
 		temp2=(float)a2*(3.3/4096);
 		temp3=(float)a3*(3.3/4096);
-		pwm=pwm-Position_PID(temp1,Target_Uo);              //===位置PID控制器
+//		pwm=pwm-Position_PID(temp1,Target_Uo);              //===位置PID控制器
 		limit_pwm();                                       //===PWM限幅
 //		
 			
@@ -52,7 +52,7 @@ int Position_PID (int Encoder,int Target)
 
 void limit_pwm(void)
 { 
-		int Amplitude_High=800;    //===PWM满幅是899 限制在899
+		int Amplitude_High=450;    //===PWM满幅是899 限制在899
 	  int Amplitude_Low=100;     //===PWM低于200，电机停止转速
     if(pwm>=Amplitude_High) pwm=Amplitude_High;	
 		if(pwm<=Amplitude_Low)  pwm=Amplitude_Low;	

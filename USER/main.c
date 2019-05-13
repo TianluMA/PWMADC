@@ -33,7 +33,7 @@ u8 time0=0;u8 time1=0;u8 time2=0;u8 time3=0;
 		char str1[10]="0";
 		char str2[10]="0";
 		char str3[10]="0";
-float Target_Uo=66.0;
+float Target_Uo=60.0;
 u8 D=50;    // 通道1占空比
 extern int pwm;
  int main(void)
@@ -50,9 +50,10 @@ extern int pwm;
 
 	LCD_init(); //?????    
 	LCD_clear(); 
+	 pwm=180;
    	while(1)
 	{								 
-//pwm=500;
+
 		TIM_SetCompare1(TIM1,580);		   // 设置TIM1通道1占空比 = 580/1160
 		TIM_SetCompare2(TIM8,580);		   // 设置TIM8通道2占空比 = 580/1160
 // ADC实时采集数据并排序
@@ -66,7 +67,7 @@ extern int pwm;
 		a3= GetMedianNum(b3, 201);
 // Boost PWM		
 		TIM_SetCompare1(TIM4,pwm);		   
-		TIM_SetCompare2(TIM4,pwm-50);	
+		TIM_SetCompare2(TIM4,pwm+10);	
 // 显示器处理		
     sprintf(str0,"%.2f",temp0);
 		sprintf(str1,"%.2f",temp1);

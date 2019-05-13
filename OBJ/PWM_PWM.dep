@@ -1,5 +1,5 @@
 Dependencies for Project 'PWM', Target 'PWM': (DO NOT MODIFY !)
-F (.\main.c)(0x5CD6C931)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\TIMER -I..\HARDWARE\ADC -I..\HARDWARE\Median_Filter -I..\HARDWARE\5110 -I..\HARDWARE\TIMER3 -I..\HARDWARE\Control-I C:\Users\matia\Desktop\研电赛\PWMADC\USER\RTE-I "D:\Program Files\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-I "D:\Program Files\MDK5\ARM\CMSIS\Include"-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5CD91BB1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\TIMER -I..\HARDWARE\ADC -I..\HARDWARE\Median_Filter -I..\HARDWARE\5110 -I..\HARDWARE\TIMER3 -I..\HARDWARE\Control-I C:\Users\matia\Desktop\研电赛\PWMADC\USER\RTE-I "D:\Program Files\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-I "D:\Program Files\MDK5\ARM\CMSIS\Include"-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\HARDWARE\LED\led.h)(0x50513ABC)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x504CB780)
@@ -329,7 +329,7 @@ I (..\HARDWARE\LED\led.h)(0x50513ABC)
 I (..\HARDWARE\ADC\adc.h)(0x5CD6847E)
 I (..\HARDWARE\Median_Filter\median_filter.h)(0x5CCB081A)
 I (D:\Program Files\MDK5\ARM\ARMCC\include\stdio.h)(0x5475F300)
-F (..\HARDWARE\Control\control.c)(0x5CD6C5A9)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\TIMER -I..\HARDWARE\ADC -I..\HARDWARE\Median_Filter -I..\HARDWARE\5110 -I..\HARDWARE\TIMER3 -I..\HARDWARE\Control-I C:\Users\matia\Desktop\研电赛\PWMADC\USER\RTE-I "D:\Program Files\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-I "D:\Program Files\MDK5\ARM\CMSIS\Include"-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\control.o --omf_browse ..\obj\control.crf --depend ..\obj\control.d)
+F (..\HARDWARE\Control\control.c)(0x5CD905FC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\TIMER -I..\HARDWARE\ADC -I..\HARDWARE\Median_Filter -I..\HARDWARE\5110 -I..\HARDWARE\TIMER3 -I..\HARDWARE\Control-I C:\Users\matia\Desktop\研电赛\PWMADC\USER\RTE-I "D:\Program Files\MDK5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-I "D:\Program Files\MDK5\ARM\CMSIS\Include"-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\control.o --omf_browse ..\obj\control.crf --depend ..\obj\control.d)
 I (..\HARDWARE\TIMER3\timer3.h)(0x5CD6C3A2)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x504CB780)
