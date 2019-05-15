@@ -71,7 +71,7 @@ void TIM1_PWM_Init(u16 arr,u16 psc)
 	
 	TIM_CtrlPWMOutputs(TIM1,ENABLE);	//MOE 主输出使能,高级定时器必须开启这个 
 	
-	TIM1->CCR2=10;         // 改变移项角
+	TIM1->CCR2=300;         // 改变移项角
 	
 	TIM_ITConfig(TIM1, TIM_IT_CC2, ENABLE);
 	NVIC_InitStructure.NVIC_IRQChannel = TIM1_CC_IRQn;    
